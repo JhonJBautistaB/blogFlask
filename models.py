@@ -1,7 +1,6 @@
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
-users = []
 
 class User(UserMixin):
 
@@ -18,10 +17,15 @@ class User(UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
-    def get_user(email):
-        for user in users:
-            if user.mail == email:
-                return user
-
     def __repr__(self):
         return '<User {}>'.format(self.email)
+
+
+users = []
+
+
+def get_user(email):
+    for user in users:
+        if user.email == email:
+            return user
+    return None

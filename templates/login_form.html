@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_template.html" %}
 
 {% block title %}Login{% endblock %}
 
@@ -26,5 +26,5 @@
             </div>
         </form>
     </div>
-    <div>¿No tienes cuenta? <a href="{{ url_for('show_signup') }}">Regístrate</a></div>
+    <div>¿No tienes cuenta? <a href="{{ url_for('show_signup_form') }}">Regístrate</a></div>
 {% endblock %}
